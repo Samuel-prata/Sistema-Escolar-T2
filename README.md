@@ -1,2 +1,4 @@
-# Sistema-Escolar
-Esse repositório serve de guia de uma API Rest que os alunos do curso de Back-End, da escola vai na web estão construindo como desafio Final
+
+#🎓 Sistema Escolar
+
+Este repositório serve como guia para uma API Rest que os alunos da turma T2 de Back-End da Escola Vai na Web estão construindo como desafio final, no horário vespertino. 🚀📚
