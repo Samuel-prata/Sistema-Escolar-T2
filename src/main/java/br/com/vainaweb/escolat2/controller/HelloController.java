@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 	
 	@GetMapping
-	public String saudacao(@RequestParam(defaultValue = "Back-end", value = "pais") String nome) {
+	public String saudacao(@RequestParam(defaultValue = "Back-end", value = "nome") String nome) {
 		return "Hello, " + nome;
 	}
-	
 }
