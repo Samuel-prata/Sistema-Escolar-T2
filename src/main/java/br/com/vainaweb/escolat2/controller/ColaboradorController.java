@@ -10,29 +10,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.vainaweb.escolat2.dto.DadosColaborador;
-import br.com.vainaweb.escolat2.service.Colaborador;
+import br.com.vainaweb.escolat2.model.ColaboradorModel;
+import br.com.vainaweb.escolat2.service.ColaboradorService;
 
 @RestController //Classe controladora Gerenciada pelo Spring
 @RequestMapping("/colaborador-teste")
 public class ColaboradorController {
 	
 	@Autowired
-	private Colaborador colaborador;
-		
-	@GetMapping("/{id}")
-	public String encontrarUmColaborador() {
-		return "Nome: Zeca Pagodinho, CPF: 222.578.976-90";
-	}
+	private ColaboradorService service;
 	
 	@GetMapping
-	public List<Colaborador> encontrarTodosOsColaboradores(){
-		return colaborador.encontrar();
+	public List<ColaboradorModel> listarTodosOsColaboradores(){
+		return service.encontrarTodosOsColaboradores();
 	}
 	
-	@PostMapping
-	public String cadastrarColaborador(@RequestBody DadosColaborador dados) {
-		colaborador.cadastrar(dados);
-		return "ok";
-	}
+//	@PostMapping
+//	public String cadastrarColaborador(@RequestBody DadosColaborador dados) {
+//		service.cadastrar(dados);
+//		return "ok";
+//	}
 	
 }
