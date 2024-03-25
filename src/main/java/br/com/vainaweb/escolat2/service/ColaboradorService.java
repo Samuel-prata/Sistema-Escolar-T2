@@ -24,5 +24,10 @@ public class ColaboradorService {
 	public List<ColaboradorModel> encontrarTodosOsColaboradores() {
 		return repository.findAll(); // SELECT * FROM tb_colaboradores;
 	}
+
+	public void cadastrar(DadosColaborador dados) {
+		var colaborador = new ColaboradorModel(dados.nome(), dados.cpf(), dados.email(), dados.cargo());
+		repository.save(colaborador); //INSERT 
+	}
 	
 }

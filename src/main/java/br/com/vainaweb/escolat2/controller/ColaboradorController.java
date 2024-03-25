@@ -25,10 +25,10 @@ public class ColaboradorController {
 		return service.encontrarTodosOsColaboradores();
 	}
 	
-//	@PostMapping
-//	public String cadastrarColaborador(@RequestBody DadosColaborador dados) {
-//		service.cadastrar(dados);
-//		return "ok";
-//	}
+	@PostMapping //Verbo HTTP POST
+	public String cadastrarColaborador(@RequestBody DadosColaborador dados) {
+		service.cadastrar(dados);
+		return "ok";
+	}
 	
 }
