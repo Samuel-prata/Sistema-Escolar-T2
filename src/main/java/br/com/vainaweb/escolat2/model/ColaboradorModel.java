@@ -52,6 +52,7 @@ public class ColaboradorModel {
 		this.cpf = cpf;
 		this.cargo = cargo;
 	}
+
 	
 	
 }
