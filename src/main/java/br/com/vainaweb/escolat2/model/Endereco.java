@@ -1,12 +1,16 @@
 package br.com.vainaweb.escolat2.model;
 
 import jakarta.persistence.Embeddable;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Embeddable //Diz que essa classe pode ser incorporada
+@AllArgsConstructor
+@NoArgsConstructor
 public class Endereco {
 	
 	private String cep;
