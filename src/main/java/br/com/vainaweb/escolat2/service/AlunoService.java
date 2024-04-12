@@ -14,15 +14,16 @@ public class AlunoService {
 
 	@Autowired
 	private AlunoRepository repository;
-	
+
 	public Optional<AlunoModel> cadastrar(DadosAluno dados) {
-		
-		var aluno = repository.findByCpf(dados.cpf());
-		
-		if(aluno.get().getCpf() != null || aluno.get().getEmail() != null) {
+
+		var cpfExistente = repository.existsByCpf(dados.cpf());
+		var emailExistente = repository.existsByEmail(dados.email());
+
+		if (cpfExistente || emailExistente) {
 			return Optional.empty();
-		}else {
-			return Optional.of(repository.save(new AlunoModel(dados)));
 		}
+
+		return Optional.of(repository.save(new AlunoModel(dados)));
 	}
 }

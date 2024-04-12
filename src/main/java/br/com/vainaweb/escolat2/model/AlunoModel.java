@@ -3,6 +3,7 @@ package br.com.vainaweb.escolat2.model;
 import org.hibernate.validator.constraints.br.CPF;
 
 import br.com.vainaweb.escolat2.dto.DadosAluno;
+import br.com.vainaweb.escolat2.dto.DadosAtualizados;
 import br.com.vainaweb.escolat2.enums.Curso;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -11,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
@@ -56,6 +58,11 @@ public class AlunoModel {
 		this.endereco = new Endereco(dados.endereco().cep(), dados.endereco().logradouro(), dados.endereco().bairro(),
 				dados.endereco().cidade(), dados.endereco().complemento(), dados.endereco().uf(),
 				dados.endereco().numero());
+	}
+
+	public void atualizarInfo(@Valid DadosAtualizados dados) {
+		this.nome = dados.nome() != null ? dados.nome(): nome;
+		this.email = dados.email() != null ? dados.email(): email;
 	}
 
 }

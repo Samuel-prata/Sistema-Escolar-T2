@@ -13,4 +13,8 @@ public interface AlunoRepository extends JpaRepository<AlunoModel, Long>{
 	//SELECT * FROM tb_alunos WHERE cpf = ???
 	Optional<AlunoModel> findByCpf(String cpf);
 
+	boolean existsByCpf(String cpf);
+	
+	boolean existsByEmail(String email);
+
 }
