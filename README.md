@@ -81,7 +81,7 @@ git clone link do repositório
 
 ### 3. Inicializando a Aplicação
 
-1. Procure o pacote `br.com.vainaweb.escolat2` e execute a classe `Escolat2Application.java`
+1. Procure o pacote `br.com.vainaweb.escolat3` e execute a classe `Escolat3Application.java`
 
 ...
 
